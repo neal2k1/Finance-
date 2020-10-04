@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{grand_total}}</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            {% for holding in holdings %}
+            <tr>
+                <td>{{holding["Symbol"]}}</td>
+                <td>{{holding["Name"]}}</td>
+                <td>{{holding["Shares"]}}</td>
+                <td>{{holding["Price"]}}</td>
+                <td>{{holding["Total"]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+            <tfoot>
+                <td>CASH</td>
+                <td colspan="3"></td>
+                <td>{{cash_owned}}</td>
+            </tfoot>
+    </table>
+{% endblock %}
