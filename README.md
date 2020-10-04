@@ -2,6 +2,8 @@
 Basic Finance WebApp allows user to buy and sell shares with Realtime prices
 
 usage
+
+
 register and login to rapid api for api key then run on the command-line:
 
 for mac and linux
